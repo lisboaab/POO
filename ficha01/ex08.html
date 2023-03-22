@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha 1 - ex 8 JS</title>
+</head>
+<body>
+    <script>
+        let num = +prompt("Insira um número: ")
+
+        for (let i = 2; i <= num; i++) {
+        let isPrime = true
+        for (let j = 2; j <= i - 1; j++) {
+            if (i % j == 0) {
+                isPrime = false
+            }
+        }
+        if (isPrime) {
+            console.log(i);
+        }
+        }
+    // O algoritmo começa pedindo um número ao usuário usando prompt. Em seguida, ele usa um loop for para iterar sobre todos os números de 2 até o número inserido pelo usuário.
+    // Para cada número i, o algoritmo usa outro loop for para verificar se ele é primo ou não. Isso é feito verificando se o número i é divisível por algum número entre 2 e i - 1 (exclusivo). Se i for divisível por algum desses números, então i não é primo e a variável isPrime é definida como false. Caso contrário, isPrime continua como true, o que significa que i é primo.
+    // Se i for primo, o algoritmo imprime o valor de i usando console.log.
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Ficha 01 -Ex 12</title>
+</head>
+<body>
+    <script>
+        let numTentativas = +prompt("Qual a quantidade de tentativas disponíveis ao utilizador?");
+        let maxNum = +prompt("Qual deve ser o maior número a ser gerado?");
+        let minNum = +prompt("Qual deve ser o menor número a ser gerado?");
+
+        let numGerado = Math.floor(Math.random()*(maxNum - minNum + 1));
+        let tentativas = 0;
+
+
+        while (tentativas !== numTentativas) {
+            let numGuessed = +prompt("Adivinhe o número:")
+            if (numGuessed === numGerado) {
+                console.log("Acertou!")
+                break
+            }
+            else if (numGuessed > numGerado) {
+                console.log("O número que tentou é maior do que o número gerado!");
+                tentativas += 1;
+            }
+            else if (numGuessed < numGerado) {
+                console.log("O número que tentou é menor do que o número gerado!");
+                tentativas += 1;
+            }
+        }
+
+        if (tentativas === numTentativas){
+            console.log(`Suas tentativas acabaram. O número era ${numGerado}`);
+        }
+        console.log(`FIM`);
+    </script>
+</body>
+</html>

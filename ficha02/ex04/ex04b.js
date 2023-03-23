@@ -19,5 +19,3 @@ function isPerfect(number){
 }
 
 isPerfect(28);
-isPerfect(0);
-isPerfect(1);

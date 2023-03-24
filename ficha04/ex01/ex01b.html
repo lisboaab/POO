@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha 04 - EX 01b</title>
+</head>
+<body>
+    <textarea id="textarea"> </textarea>
+    <input id="btnSubmit" type="submit" onclick=attText()>
+    <p id="paragraph"> This is a paragraph!! </p>
+    
+    <script>
+    
+    function attText(){
+        var text = document.getElementById("textarea").value;
+        let paragraph = document.getElementById("paragraph")
+        paragraph.innerHTML = text
+    }
+
+    </script>
+</body>
+
+<!-- OU
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha 04 - EX 01b</title>
+</head>
+<body>
+    <textarea id="textarea"> </textarea>
+    <p id="paragraph"> This is a paragraph!! </p>
+    
+    <script>
+        var txtArea = document.getElementById("textarea");
+        
+        const paragraph = document.getElementById("paragraph");
+
+        txtArea.addEventListener("input", function(){
+            paragraph.innerHTML = txtArea.value;
+        })
+    
+
+    </script>
+</body>
+</html>
+
+-->
+</html>

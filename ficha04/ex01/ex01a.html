@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha 04 - Ex 01a</title>
+</head>
+<body>
+    <!--Exemplo 1
+    <button onclick='alert("Olá mundo!")'>Clica-me</button> -->
+    <button id="botao">Clica-me</button>
+
+
+    <script>
+        // Exemplo 2
+        let buttonHello = document.getElementById("botao")
+        buttonHello.onclick = function(){
+            alert("Olá mundo 1")
+        }
+
+                // ou só document.getElementsByTagName("button").onclick(function(){alert("Olá mundo")})
+
+        // Exemplo 3
+        //const buttonHelloWorld = document.getElementById("botao");
+        //buttonHelloWorld.addEventListener("click", function(){
+        //    alert("Olá mundo 2")
+        //})
+
+    </script>
+    
+</body>
+</html>

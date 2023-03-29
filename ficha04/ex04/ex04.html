@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha 04 - ex 04</title>
+</head>
+<body>
+    <form id="form">
+        <h1>WebDev Tech Talk</h1>
+        Nome: <input id="nome" type="text" required>  <br><br>
+        Curso: <br><input type="radio" id="tsiw" name="curso" value="TSIW">
+        <label for="tsiw">TSIW</label><br>
+        <input type="radio" id="multimedia" name="curso" value="Multimedia">
+        <label for="multimedia">Multimédia</label><br>
+        <input type="radio" id="tcav" name="curso" value="TCAV">
+        <label for="tcav">TCAV</label><br>
+        <input type="radio" id="design" name="curso" value="Design">
+        <label for="design">Design</label><br>
+        <input type="radio" id="fotografia" name="curso" value="Fotografia">
+        <label for="fotografia">Fotografia</label> <br><br>
+        Perfil: <select id="perfil" required> <br> <br>
+            <option>Estudante</option>
+            <option>Docente</option>
+            <option>Funcionário</option>
+            <option>Outro</option>
+        </select> <br> <br>
+
+        <div>
+            <fieldset>
+              <legend>Sessao</legend>
+              <div>
+                <input type="checkbox" id="Manha" name="sessao" value="manha" class="sessionCheckbox">
+                <label for="Manha">Manha</label>
+                <input type="checkbox" id="Tarde" name="sessao" value="tarde" class="sessionCheckbox">
+                <label for="Tarde">Tarde</label>
+              </div>
+            </fieldset>
+          </div>
+        <br> <br>
+        <button onclick=adicionar()>Adicionar</button>
+        <button onclick=contar()>Contar</button>
+        
+    </form> <br> <br>
+
+    
+
+    <table border="1" id="tabela">
+        <tr>
+            <th>Nome</th>
+            <th>Curso</th>
+            <th>Perfil</th>
+            <th>Sessao</th>
+        </tr>
+    </table>
+    <script src="ex04.js"></script>
+</body>
+</html>

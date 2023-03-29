@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha 04 - ex 03</title>
+</head>
+<body>
+    <form id="form">
+        <h1>Computer games</h1>
+        Nome do jogo: <input id="nome" type="text" required>  <br><br>
+        Ano: <input id="ano" type="text" required> <br> <br>
+        Género: <select id="genero"> <br> <br>
+            <option>Ação</option>
+            <option>Aventura</option>
+            <option>Estratégia</option>
+            <option>Desporto</option>
+            <option>Simulação</option>
+        </select> <br> <br>
+        Capa: <input id="linkCapa" type="url"> <br> <br>
+
+        <button onclick=adicionar()>Adicionar</button>
+        <button onclick=reset()>Limpar</button>
+    </form> <br> <br>
+
+    <table border="1" id="tabela">
+        <tr>
+            <th>Nome</th>
+            <th>Ano</th>
+            <th>Género</th>
+            <th>Capa</th>
+            <th>Opções</th>
+        </tr>
+    </table>
+    <script src="ex03.js"></script>
+</body>
+</html>

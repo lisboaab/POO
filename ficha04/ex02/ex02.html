@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha 04 - EX02</title>
+</head>
+<body>
+    <select id="selections">
+        <option value="azul">Azul</option>
+        <option value="verde">Verde</option>
+        <option value="vermelho">Vermelho</option>
+        <option value="amarelo">Amarelo</option>
+    </select>
+    <button onclick=add()>Add</button>
+    <button onclick=show()>Show</button>
+    <button onclick=remove()>Remove</button>
+
+    <script>
+
+        function add(){
+            let newColor = prompt("Qual cor quer adicionar?");
+            let selection = document.getElementById("selections");
+            var option = document.createElement("option");
+            option.text = newColor;
+            selection.add(option);
+        }
+        
+
+        function show(){
+            let cor = document.getElementById("selections").value;
+            alert(`The color you chose was ${cor}`)
+        }
+
+        function remove(){
+            var element = document.getElementById("selections");
+            element.remove(element.selectedIndex);
+        }
+
+
+    </script>
+</body>
+</html>

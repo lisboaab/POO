@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha 06 - ex 01</title>
+</head>
+<body>
+    <h1>Games</h1>
+    
+    <!--D: create form-->
+    <div id="divAddGame">
+        <form id="formAddGame">
+            <label for="name">Name of the game:</label> <br>
+            <input type="text" id="inputName"> <br><br>
+            <label for="year">Year the game was released:</label><br>
+            <input type="text" id="inputYear"> <br><br>
+            <button id="btnAddGame" onclick=addGame(event)>ADD GAME</button><br>
+        </form>
+        <hr>
+    </div>
+    
+    <div id="divRemoveGame">
+        <br>
+        <form id="formRemoveGame">
+            <label for="gameToRemove">Insert a game name:</label>
+            <input type="text" id="gameToRemove">
+            <button id="btnRemove" type="submit">REMOVE</button>
+        </form>
+    </div>
+
+    <script src="ex01.js"></script>
+</body>
+</html>

@@ -5,11 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ficha 06 - ex 02</title>
+    <link rel="stylesheet" href="ex02.css">
 </head>
 <body>
-    <h1>Games</h1>
+    <h1>My favourite movies</h1>
     
+    <fieldset>
+        <legend>Fill the form:</legend>
+        <form id="formMovies" method="post">
+            <label for="filmTitle">Film title:</label>
+            <input type="text" id="filmTitle" required> <br><br>
+
+            <label for="filmGenre">Genre:</label>
+            <select id="filmGenre">
+                <option value="">Choose an option</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Action">Action</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Horror">Horror</option>
+                <option value="Romance">Romance</option>
+                <option value="Thriller">Thriller</option>
+                <option value="Other">Other</option>
+            </select><br><br>
+
+            <label for="filmYear">Film year:</label>
+            <input type="text" id="filmYear" required><br><br>
+
+            <label for="filmCover">Film cover:</label>
+            <input type="link" id="filmCover" required><br><br>
+
+            <label for="filmTrailer">Film trailer:</label>
+            <input type="link" id="filmTrailer"><br><br>
+
+            <div id="buttons">
+                <button type="submit" id="btnSubmit">Submit</button>
+                <button type="reset" id="btnReset">Reset</button>
+            </div>
+        </form>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>My list</legend>
+        <table id="movieTable">
+            <thead>
+                <th>Title</th>
+                <th>Genre</th>
+                <th>Options</th>
+            </thead>
+            <tbody id="tableBody">
+
+            </tbody>
+        </table>
+    </fieldset>
     
+    <dialog id="dialogTrailer">
+        <iframe width="420" height="315" src=""></iframe>
+    </dialog>
+    
+    <dialog id="dialogCover">
+        <img src="" alt="">
+    </dialog>
+
     <script src="ex02.js"></script>
 </body>
 </html>

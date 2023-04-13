@@ -95,7 +95,7 @@ const novaCategoria = () => {
     let novaCat = prompt("Qual categoria deseja adicionar?");
     const categoria = document.getElementById("categoria");
 
-    if ([...categoria.options].some(option => option.value === novaCat)) {
+    if ([...categoria.options].some(option => option.value.toLowerCase() === novaCat.toLowerCase())) {
         alert("Esta categoria já existe!");
         return;
     }

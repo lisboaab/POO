@@ -5,7 +5,7 @@ var percentagemDentro = 0;
 
 const tableBody = document.getElementById('tableBody');
 
-for (const colaborador of colaboladores) {
+for (const colaborador of colaboradores) {
     const linha = document.createElement('tr');
   
     const nomeCell = document.createElement('td');
@@ -32,16 +32,18 @@ function entrar(colaborador) {
         saida(colaborador);
     });
     alert(`O colaborador ${colaborador} entrou no prédio`);
+    numColaboradoresDentro += 1;
     attPorcentagem();
 }
 
 function saida(colaborador) {
     const botaoEntrar = document.getElementById(`btnEntrar${colaborador}`);
     botaoEntrar.textContent = 'Entrar';
-    botaoEntrar.addEventListener('click', () => {
+    /*botaoEntrar.addEventListener('click', () => {
         entrar(colaborador);
-    });
+    });*/
     alert(`O colaborador ${colaborador} saiu do prédio`);
+    numColaboradoresDentro -= 1;
     attPorcentagem();
 }
   

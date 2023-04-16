@@ -49,7 +49,9 @@ const addToTable = () => {
 };
 addToTable();
 
-
+// pegar info de um radiobutton (baseado no nome do botao)
+const iva = document.querySelector('input[name="iva"]:checked');
+const ivaValue = iva.value;
 
 // limpar um form
 form.reset();

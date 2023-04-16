@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 1</title>
+</head>
+<body>
+    <h1>WhiteStore</h1>
+
+    <fieldset>
+        <legend>Adicione um item à compra </legend>
+        <form id="addItemCompra">
+            <label for="nomeCliente">Nome do Cliente:</label>
+            <input type="text" id="nomeCliente" required> <br><br>
+
+            <label for="produtoCliente">Produto:</label>
+            <select id="produtoCliente" required>
+                <option value="">Selecione um produto</option>
+                <option value="200">Desktop</option>
+                <option value="500">Portátil</option>
+                <option value="300">Monitor</option>
+                <option value="50">Teclado</option>
+                <option value="20">Rato</option>
+                <option value="250">Impressora</option>
+                <option value="20">Disco Externo</option>
+                <option value="100">Painel Solar</option>
+            </select> <br><br>
+
+            <label for="iva">IVA</label> <br>
+            <label for="iva13">13%</label>
+            <input type="radio" name="iva" value="13" id="iva13">
+            <label for="iva23">23%</label>
+            <input type="radio" name="iva" value="23" id="iva23" checked><br><br>
+
+            <button type="submit" id="btnAdd">ADICIONAR</button>
+        </form>
+    </fieldset>
+
+
+    <fieldset>
+        <legend>Produtos</legend>
+
+        <table id="tabelaProdutos" border="2">
+            <thead>
+                <th>Produto</th>
+                <th>Qty</th>
+                <th>PU</th>
+                <th>IVA (%)</th>
+                <th>Subtotal</th>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+    </fieldset>
+    <br><br>
+    <button id="btnComprar">COMPRAR</button>
+    <button id="btnAdcProtudo">ADICIONAR PRODUTO</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

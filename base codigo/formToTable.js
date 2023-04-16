@@ -48,3 +48,8 @@ const addToTable = () => {
       tableAdd.innerHTML = line;
 };
 addToTable();
+
+
+
+// limpar um form
+form.reset();

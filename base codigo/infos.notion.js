@@ -93,3 +93,5 @@ deve ocorrer e o segundo é a quantidade de elementos que devem ser removidos a 
 índice. No caso do código apresentado, **`games.splice(indexToRemove, 1)`**está removendo 
 o elemento do array **`games`**que possui o índice armazenado na variável **`indexToRemove`**e 
 mais um elemento a partir daquele índice. Em outras palavras, está removend*/
+
+//arredondar casas decimais: O método toFixed(num) é usado em números para especificar o número de casas decimais que devem ser exibidas após o ponto decimal.

@@ -5,79 +5,85 @@ var percentagemDentro = 0;
 
 const tableBody = document.getElementById('tableBody');
 
+
 for (const colaborador of colaboradores) {
-    const linha = document.createElement('tr');
-  
-    const nomeCell = document.createElement('td');
-    nomeCell.textContent = colaborador;
-    linha.appendChild(nomeCell);
-  
-    const acaoCell = document.createElement('td');
-    const botaoEntrar = document.createElement('button');
-    botaoEntrar.textContent = 'Entrar';
-    botaoEntrar.setAttribute('id', `btnEntrar${colaborador}`);
-    botaoEntrar.addEventListener('click', () => {
-      entrar(colaborador);
-    });
-    acaoCell.appendChild(botaoEntrar);
-    linha.appendChild(acaoCell);
-  
-    tableBody.appendChild(linha);
+    const line = `<tr><td>${colaborador}</td><td><input class='btn' type="button" data-nome="${colaborador}" value="ENTRAR"></td></tr>`
+    tableBody.innerHTML += line
 }
 
-function entrar(colaborador) {
-    const botaoEntrar = document.getElementById(`btnEntrar${colaborador}`);
-    botaoEntrar.textContent = 'Saida';
-    botaoEntrar.addEventListener('click', () => {
-        saida(colaborador);
-    });
-    alert(`O colaborador ${colaborador} entrou no prédio`);
-    numColaboradoresDentro += 1;
-    attPorcentagem();
-}
 
-function saida(colaborador) {
-    const botaoEntrar = document.getElementById(`btnEntrar${colaborador}`);
-    botaoEntrar.textContent = 'Entrar';
-    /*botaoEntrar.addEventListener('click', () => {
-        entrar(colaborador);
-    });*/
-    alert(`O colaborador ${colaborador} saiu do prédio`);
-    numColaboradoresDentro -= 1;
-    attPorcentagem();
-}
-  
+const btns = document.querySelectorAll('.btn');
+btns.forEach(btn => {
+    btn.addEventListener('click', (event) => {
+        const nome = event.target.dataset.nome;
+        if (btn.value === 'ENTRAR'){
+            numColaboradoresDentro += 1;
+            btn.value = 'SAIR';
+            attPorcentagem();
+            alert(`O colaborador ${nome} entrou no predio`)
+        }
+        else {
+            numColaboradoresDentro -= 1;
+            btn.value = 'ENTRAR';
+            attPorcentagem();
+            alert(`O colaborador ${nome} saiu do predio`)
+        }
+        if (numColaboradoresDentro === 0) {
+            alert("ATÉ AMANHÃ!");
+    }
+    })
+    
+})
 
 function adicionarColaborador(){
-    let nome = document.getElementById('nomeColaborador').value;
-    if (!colaboradores.includes(nome.toLowerCase()))
-        {const linha = document.createElement('tr');
-
-        const nomeCell = document.createElement('td');
-        nomeCell.textContent = nome;
-        linha.appendChild(nomeCell);
-
-        const acaoCell = document.createElement('td');
-        const botaoEntrar = document.createElement('button');
-        botaoEntrar.textContent = 'Entrar';
-        botaoEntrar.addEventListener('click', () => {
-            saida(nome);
-        });
-        acaoCell.appendChild(botaoEntrar);
-            linha.appendChild(acaoCell);
-
-        tableBody.appendChild(linha);
-        colaboradores.push(nome);
+    let nome = document.getElementById('nomeColaborador').value.toLowerCase();
+    if (!colaboradores.some(c => c.toLowerCase().includes(nome)))
+        {colaboradores.push(nome);
+            attLista();
+            attPorcentagem();
     } else {
-        alert(`O colaborador ${nome} ja esta na lista`)
+        alert(`O colaborador ${nome} já está na lista`)
     }
 }
 
+
 function attPorcentagem(){
     percentagemDentro = Math.round((numColaboradoresDentro / colaboradores.length) * 100);
-    document.getElementById("percentagem").innerHTML = ">> " + percentagemDentro + "% <<";
+    document.getElementById("percentagem").innerHTML = `>> ${percentagemDentro}% <<`;
 }
 
-if (numColaboradoresDentro === 0) {
-        alert("ATÉ AMANHÃ!");
-}
+
+
+function attLista() {
+    // Limpa o corpo da tabela
+    tableBody.innerHTML = '';
+  
+    // Adiciona cada colaborador como uma nova linha na tabela
+    colaboradores.forEach(colaborador => {
+      const line = `<tr><td>${colaborador}</td><td><input class='btn' type="button" data-nome="${colaborador}" value="ENTRAR"></td></tr>`;
+      tableBody.innerHTML += line;
+    });
+  
+    // Atualiza os eventos dos botões
+    const btns = document.querySelectorAll('.btn');
+    btns.forEach(btn => {
+      btn.addEventListener('click', (event) => {
+        const nome = event.target.dataset.nome;
+        if (btn.value === 'ENTRAR'){
+          numColaboradoresDentro += 1;
+          btn.value = 'SAIR';
+          attPorcentagem();
+          alert(`O colaborador ${nome} entrou no predio`);
+        } else {
+          numColaboradoresDentro -= 1;
+          btn.value = 'ENTRAR';
+          attPorcentagem();
+          alert(`O colaborador ${nome} saiu do predio`);
+          if (numColaboradoresDentro === 0) {
+            alert("ATÉ AMANHÃ!");
+        }
+        }
+      });
+    });
+  }
+  

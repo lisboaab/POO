@@ -28,3 +28,25 @@ const removeMovie = (title) => {
         }
     }
   }*/
+
+
+
+function addItemToList(){
+    const list = document.getElementById('shopList');
+    list.innerHTML = '';
+
+    for (const item of shoppingList){
+        list.innerHTML += `<li> ${item.name}: ${item.quantity}</li>`
+    }
+
+    const li = document.getElementsByTagName('li');
+    for (let i = 0; i < li.length; i++) {
+        li[i].addEventListener('click', () => removeItem(i));
+    }
+};
+
+function removeItem(index){
+    shoppingList.splice(index, 1);
+    addItemToList();
+    console.log(shoppingList);
+}

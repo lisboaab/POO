@@ -53,5 +53,16 @@ addToTable();
 const iva = document.querySelector('input[name="iva"]:checked');
 const ivaValue = iva.value;
 
+ou 
+
+const form = document.forms.nameOfTheForm;   //elemento: <form name="nameOfTheForm"...>
+const rdBtn = form.elements.rdGenre;  // elemento: <input type=radiobutton name="rdGenre"...>
+alert(rdBtn.value);
+
+
 // limpar um form
 form.reset();
+
+// limpar select
+const select = document.getElementById('produtoCliente');
+select.options[0].selected = true //-> seleciona a opcao de indice 0 que normalmente tem valor = ""; "Selecione uma opcao"

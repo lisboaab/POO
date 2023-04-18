@@ -3,6 +3,23 @@ if (movies.some((movie) => movie.title === newMovie.title)) {
 }
 
 
+const addGame = (event)=>  {
+    event.preventDefault()
+    let nameInfo = document.getElementById("inputName").value;
+    let yearInfo = document.getElementById("inputYear").value;
+    
+    const newObj = {
+        name: nameInfo,
+        year: yearInfo
+    }
+    
+    // E:
+    if (games.some((game) => game.name === newObj.name)) {
+        return alert('Game already exists');
+    }
+    
+    games.push(newObj);}
+
 
 // pra validar maisculas e minusculas
 if (produtos.some((prod) => prod.nome.toLowerCase() === novoObj.nome.toLowerCase())) {

@@ -1,3 +1,5 @@
+// valor min e max de um input:    <input type="number" id="qty" min="1" max="1000" value="1" required></input>
+
 // limpar um form
 form.reset();
 
@@ -49,6 +51,11 @@ mySelection.value = 'banana'
     const mySelection = document.getElementById('select');
     const option = new Option(text, value, defaultSelected, selected) // new Option('Orange', 'orange')
     mySelection.add(option)
+    //ou
+    let selection = document.getElementById("selections");
+    var option2 = document.createElement("option");
+    option2.text = newColor;
+    selection.add(option2);
 
 
     //  fill an <select> element with data from an array

@@ -30,7 +30,7 @@ const removeMovie = (title) => {
   }*/
 
 
-
+// Remove item de uma lista quando esse for clicado
 function addItemToList(){
     const list = document.getElementById('shopList');
     list.innerHTML = '';

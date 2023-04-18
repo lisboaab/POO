@@ -1,4 +1,5 @@
 const checkLeapYear = function (year) {
+    // checa se e um ano bissexto
     return ((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0);
 };
   

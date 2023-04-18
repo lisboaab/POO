@@ -1,4 +1,5 @@
 function multOfThree(num1, num2) {
+  // soma todos os numeros multiplos de 3 dentro de um determinado periodo
     let numbers = [];
     for (let i = num1; i <= num2; i++) {
       if (i % 3 === 0) {

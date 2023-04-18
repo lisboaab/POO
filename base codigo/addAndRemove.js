@@ -39,3 +39,6 @@ console.table(user2);
     - slice(init, end) - creates new array and copies elements from position init to end
     - concat(...elems) - returns new array: copies current members and adds elems to it
 */
+
+
+element.remove(element.selectedIndex)

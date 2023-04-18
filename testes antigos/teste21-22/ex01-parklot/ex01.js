@@ -4,18 +4,24 @@ const lotPark = +prompt('Qual a lotacao maxima do parque?');
 let entradas = 0;
 
 console.log(`A lotacao maxima e ${lotPark}`);
-while (parkList.length <= lotPark){
-    let matricula = prompt('Qual a matricula?');
-    let movimento = prompt('Qual movimento? (E/S)')
-    if (matricula === '00-00-00'){
-        break
+while (parkList.length < lotPark){
+    if (parkList.length < lotPark) {
+        let matricula = prompt('Qual a matricula?');
+        let movimento = prompt('Qual movimento? (E/S)')
+        if (matricula === '00-00-00'){
+            break
+        } else {
+            parkValidator(matricula,movimento);
+        }
     } else {
-    parkValidator(matricula,movimento);
+        console.log('Parque lotado!');
+        break;
     }
 }
 
+
 function parkValidator(matricula, movimento) {
-    if (movimento.toLowerCase() === 'e') {
+    if (movimento === 'e') {
         if (guestList.includes(matricula)) {
             if (!parkList.includes(matricula)) {
                 parkManager(matricula,'E');
@@ -29,7 +35,7 @@ function parkValidator(matricula, movimento) {
             console.log('Veículo não autorizado.');
             return false;
         }
-    } else if (movimento.toLowerCase() === 's') {
+    } else if (movimento === 's') {
         if (parkList.includes(matricula)){
             parkManager(matricula,'S')
             return true;

@@ -59,6 +59,7 @@ const numProdutos = () => {
     let count = 0;
     for(const prod of produtos){
         count += 1;
+        // poderia ser (tabela.rows.length)
     }
     alert(`A lista de compras tem ${count} produtos`)
 };
@@ -78,9 +79,14 @@ btnprodutosPorCategoria.addEventListener("click", prodPerCat);
 
 const quantidadeTotal = () => {
     let qtyTotal = 0;
-    for(const prod of produtos){
-        qtyTotal += prod.quantidade
-    }
+    for(const row of tabelaAdd.rows){
+        qtyTotal += Number(row.cells[2].textContent);
+        /* ou poderia ser:
+        for(const prod of produtos){
+            qtyTotal += prod.quantidade
+        */
+        }
+    
     alert(`Precisam sem comprados ${qtyTotal} produtos`)
 };
 btnQtyTotal.addEventListener("click", quantidadeTotal);
@@ -95,7 +101,7 @@ const novaCategoria = () => {
     let novaCat = prompt("Qual categoria deseja adicionar?");
     const categoria = document.getElementById("categoria");
 
-    if ([...categoria.options].some(option => option.value.toLowerCase() === novaCat.toLowerCase())) {
+    if ([...categoria.options].some(option => option.value.toLowerCase() === novaCat.toLowerCase())) {  // dentre as options do elemento com id categoria some...
         alert("Esta categoria já existe!");
         return;
     }

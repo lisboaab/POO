@@ -2,7 +2,7 @@ const fruits = ['apple', 'orange', 'plum', 'pineapple'];
 
 function  manipulateList(list, operation){
     if (operation === 'reverse'){
-        return list.slice().reverse();
+        return list.slice().reverse(); //  o método .slice() é usado para criar uma cópia da array original, e então executar a operação de ordenação ou inversão nessa cópia, ao invés de alterar a array original
     }
     else if (operation === 'sort'){
         return list.slice().sort();

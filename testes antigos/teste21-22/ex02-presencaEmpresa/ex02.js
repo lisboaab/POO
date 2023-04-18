@@ -68,7 +68,7 @@ function attLista() {
     const btns = document.querySelectorAll('.btn');
     btns.forEach(btn => {
       btn.addEventListener('click', (event) => {
-        const nome = event.target.dataset.nome;
+        const nome = event.target.dataset.nome;  // 'event.target' é uma propriedade do objeto Event em JavaScript que representa o elemento HTML que disparou o evento
         if (btn.value === 'ENTRAR'){
           numColaboradoresDentro += 1;
           btn.value = 'SAIR';

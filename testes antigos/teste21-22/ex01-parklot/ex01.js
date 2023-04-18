@@ -24,8 +24,9 @@ function parkValidator(matricula, movimento) {
     if (movimento === 'e') {
         if (guestList.includes(matricula)) {
             if (!parkList.includes(matricula)) {
-                parkManager(matricula,'E');
+                parkManager(matricula, movimento);
                 entradas += 1;
+                parklist.push(matricula)
                 return true;
             } else {
                 console.log('Veículo já está no parque de estacionamento.');
@@ -37,7 +38,7 @@ function parkValidator(matricula, movimento) {
         }
     } else if (movimento === 's') {
         if (parkList.includes(matricula)){
-            parkManager(matricula,'S')
+            parkManager(matricula, movimento)
             return true;
         } else {
             console.log('Veículo não está no parque de estacionamento.');

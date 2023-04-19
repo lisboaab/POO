@@ -6,24 +6,20 @@ let lotPark = Number(prompt('Indique a lotacao maxima do parque: '));
 
 let qtyCarros = 0;
 let i = 0;
-while(i < lotPark){
-    let matricula = prompt('Indique a matricula');
+let matricula = prompt('Indique a matricula');
+while(matricula != '00-00-00'){
     let movimento = prompt('Indique o movimento (E/S)');
-    if (matricula === '00-00-00'){
-        break
+    let val = parkValidator(matricula,movimento);
+    if (val === true){
+        parkManager(matricula, "e");
+        qtyCarros += 1;
     }
-    else{
-        let val = parkValidator(matricula,movimento);
-        if (val === true){
-            parkManager(matricula,movimento);
-            qtyCarros += 1;
-            i++;
-        }
-        else {
-            alert('O movimento nao foi possivel. Tente novamente')
-        }
+    else if (val === false){
+        parkManager(matricula, "s");
     }
+    matricula = prompt('Indique a matricula');
 }
+alert(`Entraram ${qtyCarros} carros no estacionamento`)
 
 function parkValidator(matricula,movimento){
     if ((guestList.includes(matricula)) && (parkList.length < lotPark) && (!parkList.includes(matricula))){
@@ -33,26 +29,28 @@ function parkValidator(matricula,movimento){
         alert('Matricula nao esta no estacionamento')
         return false
     }*/
-    else {
+    else if (parkList.includes(matricula)){
         return false
+    }else{
+        alert('O movimento nao foi possivel. Tente novamente');
     }
 }
 
 function parkManager(matricula,movimento){
-    if (movimento.toLowerCase() === 'e'){
+    if (movimento == 'e'){
         parkList.push(matricula);
         console.log('Entrou')
+        i++;
     }
-    else if (movimento.toLowerCase() === 's'){
+    else if (movimento == 's'){
         var index = parkList.indexOf(matricula);
         if (index > -1) {
         parkList.splice(index, 1);
         }
-        console.log('Saiu')
+        console.log('Saiu');
+        i--;
     }
     else {
         alert('Movimento invalido.')
     }
 }
-
-alert(`Entraram ${qtyCarros} carros no estacionamento`)

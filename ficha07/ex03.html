@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 03 - Ficha 07</title>
+</head>
+<body>
+    <h1>Movies Manager</h1>
+
+    <form id="movieForm">
+        <fieldset>
+            <legend>Add Movie</legend>
+            <label for="title">Title:</label> 
+            <input type="text" id="title"> <br>
+            <label for="yearRelease">Year of Release:</label> 
+            <input type="number" id="yearRelease"> <br>
+            <label for="director">Director:</label> <select id="directorSelector"></select> <br>
+            <label for="duration">Duration (in minutes):</label> <input type="number" id="duration"><br>
+            <label for="actors">Actors (separated by commas):</label> <input type="text" id="actors"><br>
+            <input type="button" id="btnCreateMovie" value="Create Movie">
+
+        </fieldset>
+    </form>
+
+    <form id="directorForm">
+        <fieldset>
+            <legend>Create Director</legend>
+            <label for="name">Name:</label> <input type="text" id="name"> <br>
+            <label for="dateBirth">Date of birth:</label> <input type="date" id="dateBirth"> <br>
+            <label for="country">Country:</label> <input type="text" id="country"> <br>
+            <input type="submit" id="btnCreateDirector" value="Create Director">
+        </fieldset>
+    </form>
+
+    <form id="functionsForm">
+        <fieldset>
+            <legend>Functions</legend>
+            <button type="button" class="btnSearchByDirector">All Films By Director:</button> <input type="text" id="txtSearchDirectorMovies" name="txtSearchDirectorMovies"> <br>
+            <button type="button" class="btnSearchByActors">All Films With Actor:</button> <input type="text" id="txtSearchActorMovies" name="txtSearchActorMovies">
+        </fieldset>
+    </form>
+<br><br>
+    <table border="2">
+        <tHead>
+            <th>Title</th>
+            <th>Director</th>
+            <th>Actors</th>
+            <th>Year</th>
+            <th>Duration</th>
+        </tHead>
+        <tBody id="tableBody">
+
+        </tBody>
+    </table>
+    <script src="ex03.js"></script>
+</body>
+</html>

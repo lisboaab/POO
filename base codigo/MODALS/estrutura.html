@@ -1,0 +1,44 @@
+// ESTRUTURA
+<div class="modal" id="myModal"> 
+    <div class="modal-dialog"> 
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Modal Heading</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button> <!-- Botão para fechar dismiss button -->
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">Modal body..</div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button> <!-- Botão para fechar dismiss button -->
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+// BOTÃO QUE ABRE UM MODAL
+<div class="container">
+    <h2>Abra aqui</h2>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Abrir modal</button>
+    <!-- tem que salvar o id do modal para abrir esse modal específico com o "data-bs-target" -->
+</div>
+
+// EFEITOS
+ - classe "fade" junto ao primeiro div que cria o modal para efeito de fade ao abrir e fechar o modal
+
+
+// TAMANHO DO MODAL
+- adiciona a classe "modal-dialog" ao primeiro div do modal e depois as classes especificas do tamanho:
+    >.modal-sm
+    > modal médio é o default
+    >.modal-lg
+    >.modal-xl
+
+// CENTRALIZAR MODAL na tela
+- adiciona a classe "modal-dialog modal-dialog-centered" ao primeiro div do modal

@@ -1,4 +1,4 @@
-class Books {
+export class Books {
     title = "";
     genre = "";
     authors = [];
@@ -57,49 +57,48 @@ class Books {
            this._currentPage = page; 
         }
     }
-}
 
-export function forward(){
-    if (this.currentPage === this.nPages) {
-        throw Error('Book is already finished');
-
-    } else {
-        this.currentPage += 1;
+    forward(){
+        if (this.currentPage === this.nPages) {
+            throw Error('Book is already finished');
+    
+        } else {
+            this.currentPage += 1;
+        }
     }
-}
-
-export function back(){
-    if (this._currentPage === 0) {
-        throw Error('You are already on the beggining of the book');
-    } else {
-        this.currentPage -= 1
+    
+    back(){
+        if (this._currentPage === 0) {
+            throw Error('You are already on the beggining of the book');
+        } else {
+            this.currentPage -= 1
+        }
     }
-}
-
-export function backAndForward(move,qty){
-    if(qty < 0){
-        throw Error("Number of pages invalid")
-    }
-
-    if (move === "forward"){
-        if ((this.currentPage + qty) > this.nPages){
-            throw Error("Invalid movement")
+    
+    backAndForward(move,qty){
+        if(qty < 0){
+            throw Error("Number of pages invalid")
+        }
+    
+        if (move === "forward"){
+            if ((this.currentPage + qty) > this.nPages){
+                throw Error("Invalid movement")
+            }
+            else {
+                this.currentPage += qty
+            }
+            
+        } else if (move === "back"){
+            if ((this.currentPage - qty) < 0){
+                throw Error("Invalid movement")
+            }
+            else {
+                this.currentPage -= qty
+            }
         }
         else {
-            this.currentPage += qty
+            throw Error("Movement not valid")
         }
-        
-    } else if (move === "back"){
-        if ((this.currentPage - qty) < 0){
-            throw Error("Invalid movement")
-        }
-        else {
-            this.currentPage -= qty
-        }
-    }
-    else {
-        throw Error("Movement not valid")
     }
 }
 
-window.Books = Books;

@@ -1,4 +1,4 @@
-import * as BooksImport from "../models/bookModel.js"
+import {Books} from "../models/bookModel.js"
 let books = []
 
 books.push(new Books ("Os dias sem sorte", "romance", ["João Pais"], 233, 105))

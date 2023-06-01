@@ -5,6 +5,7 @@ books.push(new Books ("Os dias sem sorte", "romance", ["João Pais"], 233, 105))
 books.push(new Books ("Amor limite", "romance", ["Maria Augusta","António Coimbra"], 513, 333))
 books.push(new Books ("Raios", "Aventura", ["Carlos Roma"], 232))
 
+// ADICIONA NA TABELA OS LIVROS DO GENERO PEDIDO
 document.getElementById("btnF1").addEventListener("click",function(){   
     let genre = prompt("Qual género desejas pesquisar?");
     if (genre === null || genre === ""){
@@ -22,6 +23,7 @@ document.getElementById("btnF1").addEventListener("click",function(){
     }    
 })
 
+// VÊ QUAIS LIVROS JÁ FORAM INICIADOS
 document.getElementById("btnF2").addEventListener("click",function(){
     let qtyBooks = 0;
     books.forEach((b) => {
@@ -32,6 +34,7 @@ document.getElementById("btnF2").addEventListener("click",function(){
     alert(`Já comecaste a ler ${qtyBooks} livros`)
 })
 
+// CONTA E SOMA TODAS AS PÁGINAS QUE JÁ FORAM LIDAS
 document.getElementById("btnF3").addEventListener("click",function(){
     let qtyPages = 0;
     books.forEach((b) => {
@@ -40,6 +43,7 @@ document.getElementById("btnF3").addEventListener("click",function(){
     alert(`Já leste ${qtyPages} páginas`)
 })
 
+// CONTA QUAIS LIVROS JÁ FORAM LIDOS MAIS DA METADE
 document.getElementById("btnF4").addEventListener("click",function(){
     let bookList = [];
     
@@ -52,6 +56,7 @@ document.getElementById("btnF4").addEventListener("click",function(){
     alert(`Já passaste da metade dos livros: ${bookList}`)
 })
 
+// ADICIONA AUTOR A LIVRO
 document.getElementById("btnF5").addEventListener("click",function(){
     let bookTitle = prompt("A qual livros desejas adicionar um autor?")
 
@@ -86,6 +91,7 @@ document.getElementById("btnF5").addEventListener("click",function(){
     }
 })
 
+// ATUALIZA TABELA LIVROS
 function attTable(){
     let tbody = document.getElementById("tbody");
     let timeInHour = 0;

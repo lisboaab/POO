@@ -56,6 +56,7 @@ export function attTabela(){
     });
 }
 
+// SEARCH ACTORS BY NAME
 document.getElementById("searchByActor").addEventListener("click", function(){
     let actorName = prompt("Enter an actor name");
     let moviesWithActor = moviesList.filter(movie => movie.actors.includes(actorName));

@@ -1,0 +1,1 @@
+document.getElementById("directorForm").addEventListener("submit", (evento) => {newDirector(evento)})

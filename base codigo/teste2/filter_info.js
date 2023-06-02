@@ -83,3 +83,6 @@ document.getElementById("searchByActor").addEventListener("click", function(){
     alert(`There are no films where ${actorName} enters.`);
   }
 })
+
+// FILTER SOME TOLOWERCASE()
+let parc = parceirias.filter((p) => p.cursos.some((c) => c.toLowerCase() === curso.toLowerCase()));

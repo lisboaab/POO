@@ -1,0 +1,8 @@
+parceirias.forEach((p) => {
+        line = `<tr><td>${p.nome}</td><td>${p.cursos}</td><td>${p.projetos.length}</td><td><button class="btnRemover" id="${parceirias.indexOf(p)}" >Remover</button></td></tr>`;
+        tbody.innerHTML += line
+        console.log(parceirias.indexOf(p)) //aqui
+    });
+
+// parceirias = array 
+//  p = obj

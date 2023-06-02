@@ -42,9 +42,14 @@ export class Parceiras {
     }
 
     get projetos() {
-        return this.projetos;
+        return this.#projetos;
     }
 
+    set projetos(newProject){
+        if (this.#projetos.length < this.maxProjetos){
+            this.#projetos += newProject
+        }
+    }
     addProject(nomeProjeto) {
         if (this.projetos.length >= this.maxProjetos) {
           throw new Error("Nº máximo de projetos já atingido");
@@ -53,6 +58,7 @@ export class Parceiras {
     }
 
     editNumMaxProjects(nomeProjeto, numMax){
+        // aqui deveria ser nome do projeto ou nome da parceria? ex 1) e
         const projeto = this.projetos.find((proj) => proj.nome === nomeProjeto);
         if (!projeto) {
             throw new Error("Projeto não encontrado");
@@ -61,3 +67,4 @@ export class Parceiras {
     }
     
 }
+

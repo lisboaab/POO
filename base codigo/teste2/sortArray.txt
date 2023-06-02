@@ -1,0 +1,32 @@
+parceirias.sort((a, b) => a.nome.localeCompare(b.nome));
+
+parceiria -> Array
+nome -> indice pelo qual a lista vai ser ordenada
+
+
+// para ser inversa basta trocar os lugares de a e b:
+parceirias.sort((a, b) => b.nome.localeCompare(a.nome));
+
+_____________________________________
+
+O método localeCompare() é um método disponível para strings no JavaScript que compara 
+duas strings e retorna um valor numérico que indica a posição relativa das strings em 
+uma ordenação lexicográfica, levando em consideração as regras de localização (idioma 
+e convenções específicas do idioma). 
+A sintaxe básica do método localeCompare() é a seguinte:
+
+            string.localeCompare(outraString)
+
+O método localeCompare() compara duas strings, string e outraString, e retorna um valor 
+numérico que indica a posição relativa das strings na ordenação lexicográfica.
+
+Se string é menor do que outraString, o valor retornado será negativo.
+Se string é maior do que outraString, o valor retornado será positivo.
+Se as strings são iguais, o valor retornado será 0.
+
+A ordenação realizada pelo localeCompare() é sensível a maiúsculas e minúsculas, ou seja, 
+caracteres maiúsculos e minúsculos são tratados como diferentes na ordenação.
+
+Além disso, o método localeCompare() também permite especificar opções adicionais para 
+personalizar a comparação, como definir o idioma ou a localização específica a ser usada 
+na comparação.

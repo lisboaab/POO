@@ -1,0 +1,4 @@
+let hours = +prompt("Quantas horas queres adicionar?");
+    if (isNaN(hours)){
+        throw Error("Insira números para representar as horas trabalhadas")
+    }

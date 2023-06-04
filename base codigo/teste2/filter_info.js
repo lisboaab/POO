@@ -86,3 +86,13 @@ document.getElementById("searchByActor").addEventListener("click", function(){
 
 // FILTER SOME TOLOWERCASE()
 let parc = parceirias.filter((p) => p.cursos.some((c) => c.toLowerCase() === curso.toLowerCase()));
+
+
+// FOR EACH
+document.getElementById("btnF1").addEventListener("click", function(){
+  let totalHours = 0;
+  listEmployees.forEach(function(e){  //aqui
+      totalHours += e.workedHours;
+  })
+  alert(`O total de horas trabalhadas por todos os funcionários é de ${totalHours} horas`)
+})

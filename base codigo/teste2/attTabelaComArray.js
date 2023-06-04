@@ -31,6 +31,6 @@ let btns = document.getElementsByClassName("btnForward");
     for (let i = 0; i < btns.length; i++) {
         btns[i].addEventListener("click", function() {
           books[i].currentPage += 1;
-          attTable()
+          attTabela()
         });
     }

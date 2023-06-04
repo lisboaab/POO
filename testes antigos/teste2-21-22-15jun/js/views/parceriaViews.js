@@ -33,28 +33,15 @@ document.getElementById("btnF2").addEventListener("click", function(){
 
 
 // Devolve a empresa parceira com mais projetos em curso
-        // Dá umm erro nessa função: quando remove algum obj da array ela não dá a empresa com o maior número de objetos
-document.getElementById("btnF3").addEventListener("click", function (){
-    let parcCount = {};
-    
-    parceirias.forEach(p => {
-        if (parcCount[p.nome]) {
-            parcCount[p.nome]++;
-        } else {
-            parcCount[p.nome] = 1;
-        }
-    });
-    
-    let maximo = 0;
-    let parcComMaisProjetos = '';
-    
-    for (let p in parcCount) {
-        if (parcCount[p] > maximo) {
-        maximo = parcCount[p];
-        parcComMaisProjetos = p;
+document.getElementById("btnF3").addEventListener("click", () => {
+    let maxProj = 0
+    let parcComMaisProjetos = ""
+    for (let parceria of parceirias){
+        if(parceria.projetos.length > maxProj){
+            maxProj = parceria.projetos.length
+            parcComMaisProjetos = parceria.nome
         }
     }
-
     alert(`A empresa com mais projetos em curso é ${parcComMaisProjetos}`)
 })
 

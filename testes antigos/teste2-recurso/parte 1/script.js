@@ -1,27 +1,23 @@
 let numsList = [];
+let num;
 
-let num = +prompt("Insira um número");
-if (numsList.length === 0 && num === -1){
-    throw Error("É necessário adicionar pelomenos um número na lista")
-} 
-else if (num === "" || num === "null"){
-    throw  Error("Insira um número válido")
-} 
-else {
-    numsList.push(num)
-    while (num !== -1){
-        num = +prompt("Insira um número");
-        if(num===""|| num===null){
-            break
-        } else if (num !== -1){
-            numsList.push(num)
-            console.log(`número ${num} adicionado a lista`)
-        }
+do {
+  num = +prompt("Insira um número");
+
+    if (numsList.length === 0 && num === -1) {
+    throw Error("É necessário adicionar pelo menos um número na lista");
+    } else if (isNaN(num)) {
+    throw Error("Insira um número válido");
+    } else if (num !== -1){
+    numsList.push(num);
     }
-    console.log(numsList)
-    let lessFrequent = getLessFrequent(numsList);
-    alert(`${numsList} => O número menos frequente é ${lessFrequent}`)
-}
+} while (num !== -1);
+
+console.log(numsList);
+
+let lessFrequent = getLessFrequent(numsList);
+alert(`${numsList} => O número menos frequente é ${lessFrequent}`);
+
 
 function getLessFrequent(list){
     let frequency = [];
@@ -33,16 +29,15 @@ function getLessFrequent(list){
         }
     });
 
-    let minFrequency = Infinity;
-    let leastFrequentNumber;
+    let leastFrequentNum = list[0];
 
-    for (let i in frequency) {  //i nesse caso é a chave(key) do array
-    if (frequency[i] < minFrequency) {  //se o valor da chave for menor que o minFrequency
-        minFrequency = frequency[i];  // substitui o valor de minFrquency
-        leastFrequentNumber = i; // e coloca a chave na variável leastFrequentNumber pra retornarmos depois
-    }
+    // Encontra o número menos frequente
+    for (let num of list) {
+      if (frequency[num] < frequency[leastFrequentNum]) {
+        leastFrequentNum = num;
+      }
     }
     console.log(frequency)
+    return leastFrequentNum;
 
-    return leastFrequentNumber;
 }

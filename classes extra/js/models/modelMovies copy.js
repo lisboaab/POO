@@ -1,3 +1,5 @@
+import { Directors } from "./modelDirectors";
+
 export class Movies {
     title = "";
     yearOfRealease = 0;
@@ -10,9 +12,10 @@ export class Movies {
         this.yearOfRealease = yearOfRealease;
         this.director =  director;
         this.duration = duration;
-        this.actors = actors.split(",");  // faz o split dos atores pra cada nome ser um elemento dentro do array
+        this.actors = actors;
     }
 }
+
 
 export let moviesList = [
     { 

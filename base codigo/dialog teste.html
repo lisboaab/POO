@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo funcionamento dialog</title>
+</head>
+<body>
+    <button id="abrir">Abrir dialog</button>
+
+    <dialog id="dialog">
+        <p>Isso é um dialog</p>
+        <button id="fechar">Fechar</button>
+    </dialog>
+    
+    <script>
+    let dialog = document.getElementById("dialog")
+    
+    document.getElementById("abrir").addEventListener("click", () => {
+        dialog.showModal()
+    })
+    document.getElementById("fechar").addEventListener("click", () => {
+        dialog.close()
+    })
+    </script>
+</body>
+</html>

@@ -28,6 +28,17 @@ const openCover = (src) => {
     dialogCover.showModal();
 };
 
+// NO HTML
+<dialog id="dialog">
+    <p>Isso é um dialog</p>
+    <button id="fechar">Fechar</button>
+</dialog>
+
+let dialog = document.getElementById("dialog")
+document.getElementById("fechar").addEventListener("click", dialog.close())
+
+
+
 /*
 Para mostrar o dialog, você pode usar o método showModal() e 
 para ocultá-lo, use o método close().

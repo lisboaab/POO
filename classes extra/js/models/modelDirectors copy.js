@@ -7,7 +7,7 @@ export class Directors {
     country = "";
 
     constructor(name,birthDate,country){
-        this.id = getNeeId();
+        this.id = getNextId();
         this.name = name;
         this.birthDate = birthDate; // podia ser só ... = new Date ()
         this.country = country;
